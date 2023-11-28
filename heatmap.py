@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
+import numpy as np
 
-def create_heat_map(mock_thermal_data):
+def create_heat_map(mock_thermal_data: np.ndarray) -> None:
 
     plt.imshow(mock_thermal_data, cmap='viridis', interpolation='nearest', origin='upper')
 

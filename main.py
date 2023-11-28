@@ -2,9 +2,8 @@ import simulate_data
 import process_data
 import heatmap
 import pprint
-
-
 pp = pprint.PrettyPrinter()
+
 def main():
     # Create a mock thermal data array with missing values
     mock_thermal_data = simulate_data.sinusoidal_with_noise(-1, 1, (100, 100))
