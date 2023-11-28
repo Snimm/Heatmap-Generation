@@ -33,11 +33,49 @@ pip install -r requirements.txt
 # Run the application
 python main.py
 ```
+**Operational Procedure: Thermal Data Analysis Code**
 
+*Prerequisite:*
+- Follow the installation steps described above.
 
-## Example image
+*Step 1: Generate Mock Thermal Data*
+
+  1.1 **Replace Sample Data (if needed):**
+- Replace the sample data (`mock_thermal_data`) with your own thermal data if available.
+- Replace `sinusoidal_with_noise()` with  `gradient_based()` if simpler data fits your needs better.  
+
+*Step 2: Check Mock Thermal Data*
+
+2.1 **Check Mock Data Generation Code:**
+- Review the create_mock_data function and ensure it meets your testing requirements.
+
+*Step 3: Handle Missing Values (Optional)*
+
+3.1 **Ckeck Missing Value Handling Code (if needed):**
+- If you have missing values in your data, review handle_missing_values function.
+- This step is optional if your data is complete or you have your own method for handling missing values.
+
+*Step 4: Create Heatmap*
+
+4.1 **Run Heatmap Generation Code:**
+- Execute the main.py file to create a heatmap from the generated or interpolated thermal data.
+- The heatmap will be displayed, showcasing the temperature distribution.
+
+Example image
 ![Figure_1](https://github.com/Snimm/Heatmap-Generation/assets/53926889/eef9ef3b-c484-4ae5-bc58-eb88246292c9)
 
+4.2 **Review Heatmap:**
+- Observe the heatmap to gain insights into the thermal patterns present in the data.
+- Warmer colors represent higher temperatures, while cooler colors represent lower temperatures.
+
+*Step 5: Save Heatmap*
+
+5.1 **Save Heatmap:**
+- Save the heatmap by clicking floppy disk icon at the bottom of the window.
+
+
+*Conclusion:*
+This operational procedure guides you through the setup, execution, and analysis of the thermal data analysis code. By following these steps, you can generate synthetic thermal data, handle missing values if necessary, and create informative heatmaps for visualization and analysis.
 
 
 
@@ -101,6 +139,8 @@ The goal of this project is to develop an algorithm for creating mock thermal da
         plt.show()
    ```
 
+
+
 4. **Visualization and Interpretation:**
    - The generated heatmaps offer a visual representation of temperature distribution. Warmer colors indicate higher temperatures, while cooler colors represent lower temperatures. The visualization allows for quick insights into the thermal patterns present in the data.
 
@@ -111,43 +151,3 @@ The goal of this project is to develop an algorithm for creating mock thermal da
 
 While the current implementation successfully generates heatmaps from mock thermal data, real-world applications may involve more complex data sources and additional considerations such as noise reduction, dynamic data streams, and scalability. Further refinement of the algorithm and integration with real thermal data sources would be necessary for a comprehensive and practical solution.
 
-**Operational Procedure: Thermal Data Analysis Code**
-
-*Prerequisite:*
-- Follow the installation steps described above.
-
-*Step 1: Generate Mock Thermal Data*
-
-  1.1 **Replace Sample Data (if needed):**
-- Replace the sample data (`mock_thermal_data`) with your own thermal data if available.
-- Replace `sinusoidal_with_noise()` with  `gradient_based()` if simpler data fits your needs better.  
-
-*Step 2: Check Mock Thermal Data*
-
-2.1 **Check Mock Data Generation Code:**
-- Review the create_mock_data function and ensure it meets your testing requirements.
-
-*Step 3: Handle Missing Values (Optional)*
-
-3.1 **Ckeck Missing Value Handling Code (if needed):**
-- If you have missing values in your data, review handle_missing_values function.
-- This step is optional if your data is complete or you have your own method for handling missing values.
-
-*Step 4: Create Heatmap*
-
-4.1 **Run Heatmap Generation Code:**
-- Execute the main.py file to create a heatmap from the generated or interpolated thermal data.
-- The heatmap will be displayed, showcasing the temperature distribution.
-
-4.2 **Review Heatmap:**
-- Observe the heatmap to gain insights into the thermal patterns present in the data.
-- Warmer colors represent higher temperatures, while cooler colors represent lower temperatures.
-
-*Step 5: Save Heatmap*
-
-5.1 **Save Heatmap:**
-- Save the heatmap by clicking floppy disk icon at the bottom of the window.
-
-
-*Conclusion:*
-This operational procedure guides you through the setup, execution, and analysis of the thermal data analysis code. By following these steps, you can generate synthetic thermal data, handle missing values if necessary, and create informative heatmaps for visualization and analysis.
