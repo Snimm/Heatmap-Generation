@@ -38,22 +38,23 @@ python main.py
 *Prerequisite:*
 - Follow the installation steps described above.
 
-*Step 1: Generate Mock Thermal Data*
+*Step 1: Get Thermal Data*
 
   1.1 **Replace Sample Data (if needed):**
 - Replace the sample data (`mock_thermal_data`) with your own thermal data if available.
 - Replace `sinusoidal_with_noise()` with  `gradient_based()` if simpler data fits your needs better.  
 
-*Step 2: Check Mock Thermal Data*
-
 2.1 **Check Mock Data Generation Code:**
 - Review the create_mock_data function and ensure it meets your testing requirements.
 
-*Step 3: Handle Missing Values (Optional)*
+*Step 2: Process Data*
 
-3.1 **Ckeck Missing Value Handling Code (if needed):**
+3.1 **Check Missing Value Handling Code (if needed):**
 - If you have missing values in your data, review handle_missing_values function.
 - This step is optional if your data is complete or you have your own method for handling missing values.
+
+3.2 **Check data description code:**
+- check `analyze` function which resturns various properties of the data.
 
 *Step 4: Create Heatmap*
 
@@ -67,6 +68,10 @@ Example image
 4.2 **Review Heatmap:**
 - Observe the heatmap to gain insights into the thermal patterns present in the data.
 - Warmer colors represent higher temperatures, while cooler colors represent lower temperatures.
+
+4.3 **Review Data Description:**
+- Observe the data description printed in the console to gain insight. 
+
 
 *Step 5: Save Heatmap*
 
@@ -93,58 +98,19 @@ The goal of this project is to develop an algorithm for creating mock thermal da
 2. **Missing Value Handling:**
    - I anticipated that in real-world scenarios, thermal data might have missing values. To address this, I wrote a program to identify missing values in the mock thermal data and used linear interpolation to approximate those values based on the neighborhood. This step ensures a more complete dataset for heatmap generation.
 
-   ```python
-   def handle_missing_values(mock_thermal_data):
-    # Find indices of missing values
-    missing_indices = np.isnan(mock_thermal_data)
 
-    # Create a meshgrid for valid data points
-    rows, cols = np.indices(mock_thermal_data.shape)
-    valid_points = np.array([rows[~missing_indices], cols[~missing_indices]]).T
+3. **Data description Generation:**
+   - I used the various function of numpy library to extract descripton about the data. This can be used to gain insight into data along with heatmap.
+   
 
-    # Create a meshgrid for all points
-    all_points = np.array([rows.flatten(), cols.flatten()]).T
-
-    # Extract valid data values
-    valid_values = mock_thermal_data[~missing_indices]
-
-    # Perform linear interpolation
-    interpolated_values = griddata(valid_points, valid_values, all_points, method='linear')
-
-    # Reshape the interpolated values back to the original shape
-    interpolated_data = interpolated_values.reshape(mock_thermal_data.shape)
-
-    return interpolated_data
-   ```
-
-3. **Heatmap Generation:**
+4. **Heatmap Generation:**
    - I used the `matplotlib` library to create heatmaps from the generated or interpolated thermal data. The choice of the 'viridis' colormap and the 'nearest' interpolation method was made for clarity and visual appeal. Adding a color bar provides a reference for temperature values associated with the colors.
 
-   ```python
-    def create_heat_map(mock_thermal_data):
 
-        plt.imshow(mock_thermal_data, cmap='viridis', interpolation='nearest', origin='upper')
-
-        # Add colorbar for reference
-        plt.colorbar(label='Temperature')
-
-        # Set axis labels
-        plt.xlabel('Column Index')
-        plt.ylabel('Row Index')
-
-        # Add title
-        plt.title('Mock Thermal Data Heatmap')
-
-        # Show the heatmap
-        plt.show()
-   ```
-
-
-
-4. **Visualization and Interpretation:**
+5. **Visualization and Interpretation:**
    - The generated heatmaps offer a visual representation of temperature distribution. Warmer colors indicate higher temperatures, while cooler colors represent lower temperatures. The visualization allows for quick insights into the thermal patterns present in the data.
 
-5. **Documentation:**
+6. **Documentation:**
    - Throughout the process, I ensured my code to be clear, concise and well commented.
 
 *Further Steps:*

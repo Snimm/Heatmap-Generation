@@ -25,12 +25,17 @@ def handle_missing_values(mock_thermal_data: np.ndarray) -> np.ndarray:
 
 
 def analyze(data: np.ndarray) -> dict:
+
+    # Create a dictionary to store the data description
     data_dict = {}
+
+    # Add the data description to the dictionary
     data_dict["mean"] = np.mean(data)
     data_dict["std"] = np.std(data)
     data_dict["min"] = np.min(data)
     data_dict["max"] = np.max(data)
     data_dict["median"] = np.median(data)
+    
     return data_dict
 
 

@@ -1,6 +1,3 @@
-import numpy as np
-
-import matplotlib.pyplot as plt
 import simulate_data
 import process_data
 import heatmap
