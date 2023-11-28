@@ -1,7 +1,7 @@
 import numpy as np
 from scipy.interpolate import griddata
 
-def handle_missing_values(mock_thermal_data):
+def handle_missing_values(mock_thermal_data: np.ndarray) -> np.ndarray:
     # Find indices of missing values
     missing_indices = np.isnan(mock_thermal_data)
 
@@ -22,3 +22,16 @@ def handle_missing_values(mock_thermal_data):
     interpolated_data = interpolated_values.reshape(mock_thermal_data.shape)
 
     return interpolated_data
+
+
+def analyze(data: np.ndarray) -> dict:
+    data_dict = {}
+    data_dict["mean"] = np.mean(data)
+    data_dict["std"] = np.std(data)
+    data_dict["min"] = np.min(data)
+    data_dict["max"] = np.max(data)
+    data_dict["median"] = np.median(data)
+    return data_dict
+
+
+
