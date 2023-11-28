@@ -6,7 +6,7 @@ pp = pprint.PrettyPrinter()
 
 def main():
     # Create a mock thermal data array with missing values
-    mock_thermal_data = simulate_data.sinusoidal_with_noise(-1, 1, (100, 100))
+    mock_thermal_data = simulate_data.CreateMockData.sinusoidal_with_noise(-1, 1, (100, 100))
 
     # Interpolate the missing values
     interpolated_data = process_data.handle_missing_values(mock_thermal_data)

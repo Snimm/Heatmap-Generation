@@ -45,16 +45,16 @@ python main.py
 - Replace `sinusoidal_with_noise()` with  `gradient_based()` if simpler data fits your needs better.  
 
 2.1 **Check Mock Data Generation Code:**
-- Review the create_mock_data function and ensure it meets your testing requirements.
+- Review the `CreateMockData` class and ensure it meets your testing requirements if you don't use your own data.
 
 *Step 2: Process Data*
 
 3.1 **Check Missing Value Handling Code (if needed):**
-- If you have missing values in your data, review handle_missing_values function.
-- This step is optional if your data is complete or you have your own method for handling missing values.
+- If you have missing values in your data, review `handle_missing_values` function. The function uses cubic method. 
+- This is optional if your data is complete or you have your own method for handling missing values. 
 
 3.2 **Check data description code:**
-- check `analyze` function which resturns various properties of the data.
+- check `analyze` function which returns various properties of the data.
 
 *Step 4: Create Heatmap*
 
@@ -70,7 +70,7 @@ Example image
 - Warmer colors represent higher temperatures, while cooler colors represent lower temperatures.
 
 4.3 **Review Data Description:**
-- Observe the data description printed in the console to gain insight. 
+- Observe the data description printed in the console to gain insights into the thermal patterns present in the data.
 
 
 *Step 5: Save Heatmap*
@@ -101,7 +101,7 @@ The goal of this project is to develop an algorithm for creating mock thermal da
 
 3. **Data description Generation:**
    - I used the various function of numpy library to extract descripton about the data. This can be used to gain insight into data along with heatmap.
-   
+
 
 4. **Heatmap Generation:**
    - I used the `matplotlib` library to create heatmaps from the generated or interpolated thermal data. The choice of the 'viridis' colormap and the 'nearest' interpolation method was made for clarity and visual appeal. Adding a color bar provides a reference for temperature values associated with the colors.
