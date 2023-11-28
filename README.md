@@ -105,7 +105,7 @@ The goal of this project is to develop an algorithm for creating mock thermal da
    - The generated heatmaps offer a visual representation of temperature distribution. Warmer colors indicate higher temperatures, while cooler colors represent lower temperatures. The visualization allows for quick insights into the thermal patterns present in the data.
 
 5. **Documentation:**
-   - Throughout the process, I ensured to document each step.
+   - Throughout the process, I ensured my code to be clear, concise and well commented.
 
 *Further Steps:*
 
