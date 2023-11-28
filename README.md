@@ -36,8 +36,9 @@ python main.py
 
 
 ## Example image
+![Figure_1](https://github.com/Snimm/Heatmap-Generation/assets/53926889/eef9ef3b-c484-4ae5-bc58-eb88246292c9)
 
-Heatmap-Generation/Figure_1.png
+
 
 
 **Insight Guide: Thermal Data Analysis Project**
