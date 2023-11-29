@@ -93,11 +93,11 @@ The goal of this project is to develop an algorithm for creating mock thermal da
 *Implementation Strategy:*
 
 1. **Mock Thermal Data Generation:**
-   - Before creating heatmaps, it's crucial to have mock thermal data. I employed various methods to generate synthetic data, including sinusoidal_with_noise-based generation, and gradient generation. This diverse set of data allowed for a more robust testing environment.
+   - Before creating heatmaps, it's crucial to have mock thermal data. I employed various methods to generate synthetic data, including `sinusoidal_with_noise-based` generation, and `gradient` generation. This diverse set of data allowed for a more robust testing environment.
 
 2. **Missing Value Handling:**
    - I anticipated that in real-world scenarios, thermal data might have missing values. To address this, I wrote a program to identify missing values in the mock thermal data and used linear interpolation to approximate those values based on the neighborhood. This step ensures a more complete dataset for heatmap generation.
-
+   - I also created a unit test to make sure the missing values are filled appropriately.
 
 3. **Data description Generation:**
    - I used the various function of numpy library to extract descripton about the data. This can be used to gain insight into data along with heatmap.
